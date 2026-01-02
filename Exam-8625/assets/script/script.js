@@ -57,6 +57,56 @@ function addProduct() {
     clearInputs();
 }
 
+// function addProduct() {
+//     const title = titleInput.value.trim();
+//     const price = Number(priceInput.value);
+//     const category = categoryInput.value;
+//     const file = imageInput.files[0];
+
+//     if (!title || !price || !category) {
+//         alert("Please fill all required fields");
+//         return;
+//     }
+
+//     if (file) {
+//         const reader = new FileReader();
+//         reader.readAsDataURL(file);
+//         reader.onload = function () {
+//             saveProduct(reader.result);
+//         };
+//     } else {
+//         saveProduct("assets/images/headphone.jpg");
+//     }
+// }
+
+// function saveProduct(image) {
+//     if (editId === null) {
+//         products.push({
+//             id: Date.now(),
+//             title: titleInput.value,
+//             price: Number(priceInput.value),
+//             image,
+//             category: categoryInput.value
+//         });
+//     } else {
+//         const index = products.findIndex(p => p.id === editId);
+//         products[index] = {
+//             id: editId,
+//             title: titleInput.value,
+//             price: Number(priceInput.value),
+//             image,
+//             category: categoryInput.value
+//         };
+//         editId = null;
+//         productForm.querySelector("button").innerText = "Save Product";
+//     }
+
+//     saveData();
+//     displayProducts(products);
+//     clearInputs();
+// }
+
+
 /* =======================
    CLEAR FORM
 ======================= */
