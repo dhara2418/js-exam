@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ProductHub</title>
+
+    <!-- bootstrap file attachment -->
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <!-- style file attachment-->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- bootstrap Icon file attachment -->
+    <link rel="stylesheet" href="./assets/css/bootstrap-icons.min.css">
+    <!-- font file attachment -->
+    <link rel="stylesheet" href="./assets/css/font.css">
+    <!-- fevicon icon -->
+    <link rel="shortcut icon" href="./assets/images/icon.png" type="image/x-icon">
+
+</head>
+
+<body>
+
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="#">ProductHub</a>
+
+                <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="menu">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link active" href="./index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero text-center text-white">
+        <div class="container">
+            <h1 class="fw-bold">Welcome to ProductHub</h1>
+            <p class="lead">Manage your products easily using JavaScript & Local Storage</p>
+        </div>
+    </section>
+
+    <!-- PRODUCTS SECTION -->
+    <section class="container my-5" id="products">
+
+        <!-- FORM -->
+        <div class="card p-4 mb-4 shadow">
+            <h4 class="mb-3 fw-bold">Add </h4>
+
+            <form id="productForm">
+                <!-- Hidden ID for Edit -->
+                <input type="hidden" id="productId">
+
+                <div class="row g-3">
+                    <div class="col-md-3">
+                        <input type="text" id="title" class="form-control" placeholder="Product Title" required>
+                    </div>
+
+                    <div class="col-md-2">
+                        <input type="number" id="price" class="form-control" placeholder="Price" min="1" required>
+                    </div>
+
+                    <div class="col-md-4">
+                        <input type="file" id="image" class="form-control" placeholder="Image URL" required>
+                    </div>
+
+                    <div class="col-md-3">
+                        <select id="category" class="form-select" required>
+                            <option value="">Select Category</option>
+                            <option value="electronics " class="electronics">Electronics</option>
+                            <option value="fashion">Fashion</option>
+                            <option value="grocery">Grocery</option>
+                        </select>
+                    </div>
+
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary w-100">
+                            Save Product
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <!-- CONTROLS -->
+        <div class="row mb-4">
+            <div class="col-md-4">
+                <input type="text" id="search" class="form-control" placeholder="Search by title"
+                    onkeyup="searchProduct()">
+            </div>
+
+            <div class="col-md-4">
+                <select class="form-select" onchange="sortProducts(this.value)">
+                    <option value="">Sort by Price</option>
+                    <option value="low">Low to High</option>
+                    <option value="high">High to Low</option>
+                </select>
+            </div>
+
+            <div class="col-md-4">
+                <select class="form-select" onchange="filterCategory(this.value)">
+                    <option value="">All Categories</option>
+                    <option value="electronics">Electronics</option>
+                    <option value="fashion">Fashion</option>
+                    <option value="grocery">Grocery</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- PRODUCT LIST -->
+        <div class="row" id="productList"></div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p class="mb-0">© 2026 ProductHub | JavaScript Practical Project</p>
+    </footer>
+
+
+    <script src="./assets/script/bootstrap.bundle.min.js"></script>
+    <script src="./assets/script/script.js"></script>
+
+</body>
+
+</html>
